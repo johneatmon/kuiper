@@ -15,6 +15,7 @@ export default defineConfig({
 		sitemap(),
 		tailwind(),
 	],
+	site: "https://example.com",
 	vite: {
 		ssr: {
 			noExternal: ["smartypants"],
