@@ -13,7 +13,11 @@ export default defineConfig({
 		}),
 		mdx(),
 		sitemap(),
-		tailwind(),
+		tailwind({
+			config: {
+				applyBaseStyles: false,
+			},
+		}),
 	],
 	site: "https://example.com",
 	vite: {

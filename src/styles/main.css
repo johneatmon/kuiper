@@ -1,0 +1,43 @@
+@tailwind base;
+
+/* Add some additional CSS inspired by Andy Bell (https://piccalil.li/blog/a-modern-css-reset) */
+@layer base {
+	::selection {
+		@apply bg-purple-700 text-white dark:bg-purple-400 dark:text-black;
+	}
+
+	html {
+		@apply antialiased;
+
+		&:focus-within {
+			scroll-behavior: smooth;
+		}
+	}
+
+	body {
+		min-height: theme("height.screen");
+		text-rendering: optimizeSpeed;
+	}
+
+	a:not([class]) {
+		text-decoration-skip-ink: auto;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html:focus-within {
+			scroll-behavior: auto;
+		}
+
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
+}
+
+@tailwind components;
+@tailwind utilities;
