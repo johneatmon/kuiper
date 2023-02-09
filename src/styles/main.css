@@ -1,3 +1,9 @@
+@font-face {
+	font-family: "Space Grotesk variant";
+	src: url("/fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+	font-display: swap;
+}
+
 @tailwind base;
 
 /* Add some additional CSS inspired by Andy Bell (https://piccalil.li/blog/a-modern-css-reset) */
