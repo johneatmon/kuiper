@@ -8,8 +8,8 @@ import react from "@astrojs/react"
 import sitemap from "@astrojs/sitemap"
 import tailwind from "@astrojs/tailwind"
 
-import { remarkReadingTime } from "./remark-reading-time.mjs"
-import { remarkWidont } from "./remark-widont.mjs"
+import { remarkReadingTime } from "./remark-plugins/remark-reading-time.mjs"
+import { remarkWidont } from "./remark-plugins/remark-widont.mjs"
 
 // https://astro.build/config
 export default defineConfig({
