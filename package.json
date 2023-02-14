@@ -26,6 +26,7 @@
     "@astrojs/tailwind": "^3.0.1",
     "astro": "^2.0.6",
     "fontaine": "^0.2.3",
+    "astro-seo-schema": "^2.0.0",
     "mdast-util-to-string": "^3.1.1",
     "postcss": "^8.4.21",
     "postcss-nesting": "^11.1.0",

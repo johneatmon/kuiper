@@ -12,6 +12,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.49.0
   '@typescript-eslint/parser': ^5.49.0
   astro: ^2.0.6
+  astro-seo-schema: ^2.0.0
   eslint: ^8.32.0
   eslint-plugin-astro: ^0.23.0
   eslint-plugin-jsx-a11y: ^6.7.1
@@ -41,6 +42,7 @@ dependencies:
   '@astrojs/sitemap': 1.0.1
   '@astrojs/tailwind': 3.0.1_jiulpwjund37q6yckwlgwo54mu
   astro: 2.0.6
+  astro-seo-schema: 2.0.0_astro@2.0.6
   fontaine: 0.2.3
   mdast-util-to-string: 3.1.1
   postcss: 8.4.21
@@ -1563,6 +1565,17 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /astro-seo-schema/2.0.0_astro@2.0.6:
+    resolution: {integrity: sha512-VMsoQr/v4VN3wLiVm4czfabQlQOKOVim45rwcYWVTuLZuksnE848F1GqejqSaUrCqVrUd8n31p6gLgS2yghw3A==}
+    peerDependencies:
+      astro: ^2.0.0
+    dependencies:
+      astro: 2.0.6
+      schema-dts: 1.1.0
+    transitivePeerDependencies:
+      - typescript
+    dev: false
 
   /astro/2.0.6:
     resolution: {integrity: sha512-aI8Ijy2EpMyP5SpjmDJpEUdNL6CUAxnja6IeaBC1BokD/mNAnijtmMnTyWVI3UeEZ727wYLISQMyqCfEUq8VNA==}
@@ -5364,6 +5377,12 @@ packages:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
     dependencies:
       loose-envify: 1.4.0
+    dev: false
+
+  /schema-dts/1.1.0:
+    resolution: {integrity: sha512-vdmbs/5ycj4zyKpZIDqTcy+IZi4s7c38RVAYuDmRi7zgxUT8wRWPMLzg0jr7FjdVunYu9yZ00F3+XcZTTFcTOQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
     dev: false
 
   /scule/0.3.2:
