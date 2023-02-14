@@ -1,8 +1,8 @@
 ---
-import { SITE } from '@/config';
+import { SiteMetadata } from '@/config';
+import { smarty } from '@/lib/smartypants';
 import '@styles/main.css';
 import { Schema } from "astro-seo-schema";
-import { smartypants } from 'smartypants';
 
 export interface Props {
 	title?: string
@@ -34,26 +34,26 @@ const {
 	next,
 } = Astro.props as Props
 
-const title = [Astro.props.title, SITE.title].filter(Boolean).join(" · ")
+const title = [Astro.props.title, SiteMetadata.title].filter(Boolean).join(" · ")
 ---
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title set:html={smartypants(title, 1)} />
+<title set:html={smarty(title)} />
 
 <meta name="description" content={description} />
 <meta name="generator" content={Astro.generator} />
 <meta name="robots" content={import.meta.env.PROD ? 'follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large' : 'follow, noindex'} />
-<meta name="copyright" content={SITE.title} />
-{type === "article" && <meta name="author" content={SITE.title} />}
+<meta name="copyright" content={SiteMetadata.title} />
+{type === "article" && <meta name="author" content={SiteMetadata.title} />}
 
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content={type} />
 <meta property="og:title" content={Astro.props.title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site).href} />
-<meta property="og:site_name" content={SITE.title} />
+<meta property="og:site_name" content={SiteMetadata.title} />
 {dateModified && <meta property="og:updated_time" content={dateModified} />}
 {image && (
 	<meta property="og:image" content={image.src} />
@@ -72,7 +72,7 @@ const title = [Astro.props.title, SITE.title].filter(Boolean).join(" · ")
 {dateModified && <meta property="article:modified_time" content={dateModified} />}
 
 <meta name="twitter:dnt" content="on" />
-<meta name="twitter:domain" content={SITE.title} />
+<meta name="twitter:domain" content={SiteMetadata.title} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
@@ -97,7 +97,7 @@ const title = [Astro.props.title, SITE.title].filter(Boolean).join(" · ")
 	item={{
 		"@context": "https://schema.org",
 		"@type": "WebSite",
-		name: SITE.title,
+		name: SiteMetadata.title,
 		url: Astro.site?.toString()
 	}}
 />

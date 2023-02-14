@@ -1,13 +1,3 @@
-type SiteProps = {
-	title: string
-	fallbackDesc: string
-}
-
-export const SITE: SiteProps = {
-	title: "Kuiper",
-	fallbackDesc: "",
-}
-
 type SocialLink = {
 	label: string
 	href: string | URL
