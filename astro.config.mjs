@@ -39,7 +39,14 @@ export default defineConfig({
 		plugins: [
 			// https://stackblitz.com/github/unjs/fontaine/tree/main/playground?file=vite.config.mjs
 			FontaineTransform.vite({
-				fallbacks: ["Arial"],
+				fallbacks: [
+					"BlinkMacSystemFont",
+					"Segoe UI",
+					"Roboto",
+					"Ubuntu",
+					"Cantarell",
+					"Noto Sans", // matches Tailwind's default sans font stack order
+				],
 				resolvePath: (id) => new URL(`./public${id}`, import.meta.url), // id is the font src value in the CSS
 			}),
 		],

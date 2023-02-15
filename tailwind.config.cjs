@@ -10,11 +10,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: [
-					"Space\\ Grotesk\\ variant",
-					"Space\\ Grotesk\\ variant\\ fallback",
-					...defaultTheme.fontFamily.sans,
-				],
+				sans: ["Haskoy\\ variant", "Haskoy\\ variant\\ fallback", ...defaultTheme.fontFamily.sans],
 			},
 		},
 	},

@@ -1,6 +1,6 @@
 @font-face {
-	font-family: "Space Grotesk variant";
-	src: url("/fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+	font-family: "Haskoy variant";
+	src: url("/fonts/haskoy/woff2/Haskoy-Variable.woff2") format("woff2");
 	font-display: swap;
 }
 
