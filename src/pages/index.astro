@@ -1,10 +1,27 @@
 ---
-import { SITE } from "@data/config"
+import { SiteMetadata } from "@/config"
+import { smarty } from "@/lib/smartypants"
 import BaseLayout from "@layouts/BaseLayout.astro"
-import { smartypants } from "smartypants"
+
+const title = "Welcome to Kuiper",
+	description = "Building blocks for your Astro project"
+
+export const prerender = true
 ---
 
-<BaseLayout title="Welcome to Kuiper" description="Wow!">
-	<h1 set:html={smartypants(SITE.title, 1)} />
-	<p set:html={smartypants(SITE.fallbackDesc, 1)} />
+<BaseLayout title={title} description={description}>
+	<section aria-labelledby="#title" class="relative py-24">
+		<div class="isolate mx-auto max-w-xl px-5 xl:px-0">
+			<h1
+				id="title"
+				class="-m-1 mb-2 bg-gradient-to-br from-black to-stone-400 bg-clip-text p-1 text-center text-4xl font-extrabold leading-[1.1] tracking-tight text-transparent md:text-7xl"
+			>
+				Building blocks for your Astro project
+			</h1>
+			<p
+				class="mt-6 text-center text-zinc-500 md:text-xl"
+				set:html={smarty(SiteMetadata.description)}
+			/>
+		</div>
+	</section>
 </BaseLayout>
