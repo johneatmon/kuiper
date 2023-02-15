@@ -23,7 +23,6 @@ export interface Props {
 
 const {
 	description,
-	image,
 	canonicalURL = new URL(Astro.request.url, Astro.site),
 	type = "website",
 	section,
@@ -35,6 +34,16 @@ const {
 } = Astro.props as Props
 
 const title = [Astro.props.title, SiteMetadata.title].filter(Boolean).join(" · ")
+
+const og = `${Astro.url.pathname === '/' ? 'index' : Astro.url.pathname}.og`;
+let url = new URL(og, Astro.site);
+!!title && url.searchParams.append('title', encodeURIComponent(title));
+!!description && url.searchParams.append('desc', encodeURIComponent(description));
+
+let image = {
+	src: url.href,
+	alt: `Open graph image for ${title} page.`
+}
 ---
 
 <meta charset="utf-8" />
