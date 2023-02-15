@@ -7,12 +7,19 @@ import prefetch from "@astrojs/prefetch"
 import react from "@astrojs/react"
 import sitemap from "@astrojs/sitemap"
 import tailwind from "@astrojs/tailwind"
+import vercel from "@astrojs/vercel/serverless"
 
 import { remarkReadingTime } from "./remark-plugins/remark-reading-time.mjs"
 import { remarkWidont } from "./remark-plugins/remark-widont.mjs"
 
 // https://astro.build/config
 export default defineConfig({
+	adapter: vercel({
+		includeFiles: [
+			"./public/fonts/haskoy/otf/Haskoy-Regular.otf",
+			"./public/fonts/haskoy/otf/Haskoy-Bold.otf",
+		],
+	}),
 	integrations: [
 		image({
 			serviceEntryPoint: "@astrojs/image/sharp",
@@ -34,7 +41,8 @@ export default defineConfig({
 		remarkPlugins: [remarkWidont, remarkReadingTime],
 		drafts: true,
 	},
-	site: "https://example.com",
+	output: "server",
+	site: import.meta.env.DEV ? "http://localhost:3000" : "https://example.com",
 	vite: {
 		plugins: [
 			// https://stackblitz.com/github/unjs/fontaine/tree/main/playground?file=vite.config.mjs
