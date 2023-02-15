@@ -7,7 +7,8 @@ type SocialLink = {
 
 export const SiteMetadata = {
 	title: "Kuiper",
-	description: "Kuiper is an opinionated Astro starter to help you launch your websites quickly.",
+	description:
+		"Kuiper is an opinionated starter kit for your next Astro project. It includes a fully-fleshed out TypeScript config, TailwindCSS with popular plugins installed, React, and SSR with Vercel's adapter.",
 	author: {
 		name: "John Eatmon",
 		twitter: "@johneatmon_",
