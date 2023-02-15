@@ -37,7 +37,7 @@ const title = [Astro.props.title, SiteMetadata.title].filter(Boolean).join(" · 
 
 const og = `${Astro.url.pathname === '/' ? 'index' : Astro.url.pathname}.og`;
 let url = new URL(og, Astro.site);
-!!title && url.searchParams.append('title', encodeURIComponent(title));
+!!Astro.props.title && url.searchParams.append('title', encodeURIComponent(Astro.props.title));
 !!description && url.searchParams.append('desc', encodeURIComponent(description));
 
 let image = {
