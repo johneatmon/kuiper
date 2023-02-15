@@ -42,7 +42,7 @@ export default defineConfig({
 		drafts: true,
 	},
 	output: "server",
-	site: import.meta.env.DEV ? "http://localhost:3000" : "https://example.com",
+	site: import.meta.env.DEV ? "http://localhost:3000" : "https://kuiper-starter.vercel.app",
 	vite: {
 		plugins: [
 			// https://stackblitz.com/github/unjs/fontaine/tree/main/playground?file=vite.config.mjs
