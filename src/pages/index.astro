@@ -4,7 +4,8 @@ import { smarty } from "@/lib/smartypants"
 import BaseLayout from "@layouts/BaseLayout.astro"
 
 const title = "Astro Starter Kit",
-	description = "Kuiper is an opinionated starter kit for your next Astro project"
+	description =
+		"Kuiper is an opinionated starter kit for your next Astro project"
 
 export const prerender = true
 ---
@@ -14,7 +15,11 @@ export const prerender = true
 		<div class="mx-auto max-w-xl px-5 xl:px-0">
 			<h1
 				id="title"
-				class="-m-1 mb-2 bg-gradient-to-br from-black to-stone-400 bg-clip-text p-1 text-center text-4xl font-extrabold leading-[1.1] tracking-tight text-transparent md:text-7xl"
+				class:list={[
+					"-m-1 mb-2 p-1",
+					"bg-gradient-to-br from-black to-stone-400 bg-clip-text text-transparent",
+					"text-center text-4xl font-extrabold leading-[1.1] tracking-tight md:text-7xl",
+				]}
 			>
 				Building blocks for your Astro project
 			</h1>
