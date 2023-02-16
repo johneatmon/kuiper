@@ -14,5 +14,9 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		"@tailwindcss/container-queries",
+		"@tailwindcss/line-clamp",
+		"@tailwindcss/typography",
+	],
 }
