@@ -17,8 +17,12 @@ module.exports = {
       },
     },
   ],
-  printWidth: 100,
+  tabWidth: 2,
+  printWidth: 80,
+  proseWrap: "never",
+  arrowParens: "always",
   semi: false,
   trailingComma: "all",
+  bracketSpacing: true,
   useTabs: true,
 }
