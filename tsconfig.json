@@ -5,13 +5,14 @@
     "paths": {
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
-      "@data/*": ["src/data/*"],
       "@img/*": ["src/img/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@styles/*": ["src/styles/*"],
-      "@scripts/*": ["src/scripts/*"]
+      "@lib/*": ["src/lib/*"],
+      "@styles/*": ["src/styles/*"]
     },
-    "jsx": "react-jsx",
+    "noEmit": true,
+    "incremental": true,
+    "jsx": "preserve",
     "jsxImportSource": "react",
     "types": ["@astrojs/image/client"]
   }
